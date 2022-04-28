@@ -9,7 +9,12 @@ function Wordle({ solution }) {
 		return () => window.removeEventListener('keyup', handleKeyup);
 	}, [handleKeyup]);
 
-	return <div>current guess - {currentGuess} </div>;
+	return (
+		<div>
+			<p>current solution - {solution}</p>
+			<p>current guess - {currentGuess}</p>{' '}
+		</div>
+	);
 }
 
 export default Wordle;
