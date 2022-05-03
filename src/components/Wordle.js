@@ -16,8 +16,8 @@ function Wordle({ solution }) {
 
 	return (
 		<div>
-			<p>current solution - {solution}</p>
-			<p>current guess - {currentGuess}</p>
+			{/* <p>current solution - {solution}</p> */}
+			{/* <p>current guess - {currentGuess}</p> */}
 			<Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
 		</div>
 	);
