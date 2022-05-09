@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Keepad() {
+function Keepad({ usedKeys }) {
 	const [letters, setLetters] = useState(null);
 
 	useEffect(() => {
@@ -13,7 +13,12 @@ function Keepad() {
 		<div className='keypad'>
 			{letters &&
 				letters.map((letter) => {
-					return <div key={letter.id}>{letter.key}</div>;
+					const color = usedKeys[letter.key];
+					return (
+						<div key={letter.id} className={color}>
+							{letter.key}
+						</div>
+					);
 				})}
 		</div>
 	);
