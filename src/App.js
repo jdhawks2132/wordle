@@ -7,7 +7,7 @@ function App() {
 	const [solution, setSolution] = useState(null);
 
 	useEffect(() => {
-		fetch('http://localhost:3001/solutions')
+		fetch('https://wordsbackend.herokuapp.com/solutions')
 			.then((res) => res.json())
 			.then((data) => {
 				const randomSolution = data[Math.floor(Math.random() * data.length)];
