@@ -5,7 +5,7 @@ import Keepad from './Keepad';
 import Modal from './Modal';
 
 function Wordle({ solution }) {
-	const { currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys } = useWordle(solution);
+	const { currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys, errorMessage } = useWordle(solution);
 	const [showModal, setShowModal] = useState(false);
 
 	useEffect(() => {
@@ -28,6 +28,7 @@ function Wordle({ solution }) {
 			{/* <p>current solution - {solution}</p> */}
 			{/* <p>current guess - {currentGuess}</p> */}
 			<Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
+			{errorMessage && <p className='error'>{errorMessage}</p>}
 			<Keepad usedKeys={usedKeys} />
 			{showModal && <Modal isCorrect={isCorrect} turn={turn} solution={solution} />}
 		</div>
