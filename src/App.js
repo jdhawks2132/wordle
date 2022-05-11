@@ -16,11 +16,11 @@ function App() {
 	}, [setSolution]);
 
 	//generate a random number between 0 and 14
-	console.log(solution);
+	// console.log(solution);
 
 	return (
 		<div className='App'>
-			<h1>TXSSC Wordle</h1>
+			<h1>Say What?!</h1>
 			{solution && <Wordle solution={solution.word} />}
 		</div>
 	);
